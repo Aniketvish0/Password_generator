@@ -8,7 +8,7 @@ function App() {
   const [Password, setPassword] = useState("");
   const passwordref = useRef(null);
 
-  const passwordgeneraotr = useCallback(() => {
+  const passwordgenerator = useCallback(() => {
     let pass = "";
     let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     if (allowchar) {
@@ -33,8 +33,8 @@ function App() {
   }, [Password]);
 
   useEffect(() => {
-    passwordgeneraotr();
-  }, [allowchar, allownumber, length, passwordgeneraotr]);
+    passwordgenerator();
+  }, [allowchar, allownumber, length, passwordgenerator]);
 
   return (
     <>
