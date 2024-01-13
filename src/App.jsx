@@ -96,7 +96,7 @@ function App() {
                 setallowchar((prev) => !prev);
               }}
             />
-            <label htmlFor="charecter">charecter</label>
+            <label htmlFor="charecter">character</label>
           </div>
         </div>
       </div>
