@@ -30,7 +30,6 @@ function App() {
     passwordref.current?.select();
     passwordref.current?.setSelectionRange(0, 100);
     window.navigator.clipboard.writeText(Password);
-    console.log(Password);
   }, [Password]);
 
   useEffect(() => {
