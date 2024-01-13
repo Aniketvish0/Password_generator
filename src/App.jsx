@@ -86,7 +86,7 @@ function App() {
             />
             <label htmlFor="number">numbers</label>
           </div>
-          <div className="flex items-center gap-x-1 ">
+          <div className="flex items-center gap-x-1">
             <input
               type="checkbox"
               name="charecter"
@@ -96,7 +96,7 @@ function App() {
                 setallowchar((prev) => !prev);
               }}
             />
-            <label htmlFor="charecter">charecter</label>
+            <label htmlFor="charecter">character</label>
           </div>
         </div>
       </div>
