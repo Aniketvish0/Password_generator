@@ -1,21 +1,21 @@
-import { useState } from 'react';
-import { useCallback, useEffect, useRef } from 'react';
-import Navbar from './navbar';
+import { useState } from "react";
+import { useCallback, useEffect, useRef } from "react";
+import Navbar from "./Navbar";
 function App() {
   const [length, setlength] = useState(8);
   const [allownumber, setallownumber] = useState(false);
   const [allowchar, setallowchar] = useState(false);
-  const [Password, setPassword] = useState('');
+  const [Password, setPassword] = useState("");
   const passwordref = useRef(null);
 
   const passwordgeneraotr = useCallback(() => {
-    let pass = '';
-    let str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    let pass = "";
+    let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     if (allowchar) {
-      str += '!@#$%^&*/;:<>{}|=';
+      str += "!@#$%^&*/;:<>{}|=";
     }
     if (allownumber) {
-      str += '0123456789';
+      str += "0123456789";
     }
     const cryptoArray = new Uint32Array(length);
     window.crypto.getRandomValues(cryptoArray);
@@ -53,8 +53,7 @@ function App() {
             className="outline-none w-full py-1 text-2xl px-3 "
           />
           <button
-            className="py-2 px-3 bg-blue-200 hover:bg-blue-900 hover:text-white
-           "
+            className="py-2 px-3 bg-blue-200 hover:bg-blue-900 hover:text-white"
             onClick={copytoclipboard}
           >
             Copy
