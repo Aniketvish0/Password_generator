@@ -8,7 +8,7 @@ function App() {
   const [Password, setPassword] = useState("");
   const passwordref = useRef(null);
 
-  const passwordgeneraotr = useCallback(() => {
+  const passwordgenerator = useCallback(() => {
     let pass = "";
     let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     if (allowchar) {
@@ -33,14 +33,14 @@ function App() {
   }, [Password]);
 
   useEffect(() => {
-    passwordgeneraotr();
-  }, [allowchar, allownumber, length, passwordgeneraotr]);
+    passwordgenerator();
+  }, [allowchar, allownumber, length, passwordgenerator]);
 
   return (
     <>
       <Navbar />
-      <div className=" w-full font-code absolute left-1/2  sm:top-1/2  top-80 -translate-x-[50%] -translate-y-[50%] max-w-sm sm:max-w-4xl sm:mx-auto  shadow-md shadow-blue-500/50 rounded-lg sm:px-4 px-4 sm:py-6 py-6   text-yellow-900 bg-gray-950">
-        <h1 className=" text-yellow-900 my-5 text-3xl text-center">
+      <div className=" w-full font-code absolute left-1/2  sm:top-1/2  top-80 -translate-x-[50%] -translate-y-[50%] max-w-sm sm:max-w-4xl sm:mx-auto  shadow-md shadow-blue-500/50 rounded-lg sm:px-4 px-4 sm:py-6 py-6   text-yellow-500 bg-gray-950">
+        <h1 className=" text-yellow-500 my-5 text-3xl text-center">
           Password Generator
         </h1>
         <div className="flex shadow-lg rounded-lg overflow-hidden mb-4">
@@ -50,20 +50,20 @@ function App() {
             placeholder="Password"
             readOnly
             ref={passwordref}
-            className="outline-none w-full py-1 text-2xl px-3 "
+            className="outline-none w-full py-1 text-2xl px-3 text-black"
           />
           <button
-            className="py-2 px-3 bg-blue-200 hover:bg-blue-900 hover:text-white"
+            className="py-2 px-3 text-black bg-blue-200 hover:bg-blue-900 hover:text-white"
             onClick={copytoclipboard}
           >
             Copy
           </button>
         </div>
-        <div className="sm:flex mx-9 text-sm gap-x-2">
-          <div className="flex items-center gap-x-1">
+        <div className="sm:flex mx-9 text-sm gap-x-5">
+          <div className="flex items-center gap-x-1 text-xl">
             <input
               type="range"
-              className="cursor-pointer"
+              className="cursor-pointer me-5"
               min={6}
               max={100}
               value={length}
@@ -74,7 +74,7 @@ function App() {
             />
             <label htmlFor="range">Length:{length}</label>
           </div>
-          <div className="flex items-center gap-x-1 ">
+          <div className="flex items-center gap-x-1 text-xl">
             <input
               type="checkbox"
               name="number"
@@ -86,7 +86,7 @@ function App() {
             />
             <label htmlFor="number">numbers</label>
           </div>
-          <div className="flex items-center gap-x-1">
+          <div className="flex items-center gap-x-1 text-xl">
             <input
               type="checkbox"
               name="charecter"
